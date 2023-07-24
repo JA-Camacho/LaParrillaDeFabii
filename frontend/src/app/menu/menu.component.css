@@ -1,0 +1,24 @@
+/* Estilo para el enlace activo */
+.navbar-nav .nav-item .nav-link.active {
+    text-decoration: none; /* Eliminamos el subrayado por defecto */
+    position: relative; /* Aseguramos que el subrayado esté relativo al enlace */
+    padding-bottom: 2px; /* Espacio para el subrayado */
+    transition: padding-bottom 0.3s ease; /* Transición suave para el subrayado */
+}
+
+/* Efecto de subrayado */
+.navbar-nav .nav-item .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Grosor del subrayado */
+    background-color: black; /* Color del subrayado */
+    transition: width 0.3s ease; /* Transición suave para el ancho del subrayado */
+}
+
+/* Efecto de subrayado al pasar el mouse */
+.navbar-nav .nav-item .nav-link:hover::after {
+    width: 100%;
+}
