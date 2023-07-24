@@ -9,6 +9,9 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { InfoComponent } from './info/info.component';
 import { PlatosComponent } from './platos/platos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SesionComponent } from './sesion/sesion.component';
+import { MenuDiaComponent } from './menu-dia/menu-dia.component';
+import { ComentariosComponent } from './comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     CarouselComponent,
     InfoComponent,
-    PlatosComponent
+    PlatosComponent,
+    SesionComponent,
+    MenuDiaComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule,
