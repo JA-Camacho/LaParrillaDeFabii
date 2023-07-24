@@ -1,0 +1,16 @@
+<h2>Platos que Hacemos</h2>
+<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-0">
+    <div *ngFor="let plato of platoService.plato;" class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal text-center">{{ plato.nombre }}</h4>
+            </div>
+            <div class="card-body">
+                <div>
+                <img src="{{ plato.foto }}" class="d-block w-100 rounded mx-auto" height="200px" alt={{plato.nombre}}>
+                </div>
+                <p style="text-align: justify;">{{ plato.descripcion }}</p>
+            </div>
+        </div>
+    </div>
+</div>

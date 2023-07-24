@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { mongoose } = require('./database');
+const cors = require('cors');
 
 //settings
 app.set('puerto', process.env.PORT || 3000);
@@ -8,6 +9,7 @@ app.set('nombreApp', 'Aplicacion para el restaurante: "La Parrilla de Fabii"');
 
 //Middlewares
 app.use(express.json());
+app.use(cors({origin: 'http://localhost:4200'}));
 
 //Routes
 app.use('/api/admin', require('./routes/admins.routes'));

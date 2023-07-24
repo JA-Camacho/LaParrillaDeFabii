@@ -14,7 +14,7 @@ platoCtrl.createPlato = async (req, res) => {
             dia: req.body.dia,
             descripcion: req.body.descripcion,
             tipo: req.body.tipo,
-            foto: req.file.buffer
+            foto: req.body.foto
         });
         await plato.save();
         res.json('Estado: plato guardado');
@@ -32,7 +32,7 @@ platoCtrl.editPlato = async (req, res) => {
             dia: req.body.dia,
             descripcion: req.body.descripcion,
             tipo: req.body.tipo,
-            foto: req.file.buffer
+            foto: req.body.foto
     });
     await plato.findByIdAndUpdate(id, { $set: plato }, { new: true });
     res.json('Estado: plato actualizado');
