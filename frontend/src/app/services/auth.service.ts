@@ -13,4 +13,8 @@ export class AuthService {
   signIn(admin: any){
     return this.http.post(this.URL_API, admin)
   }
+
+  loggedIn(): boolean {
+    return !!localStorage.getItem('token');    
+  }
 }
