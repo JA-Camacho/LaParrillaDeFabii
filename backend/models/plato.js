@@ -6,7 +6,7 @@ const platoSchema = new Schema({
     precio: {type: Number, required: true},
     descripcion: {type: String, required: true},
     tipo: { type: String, required: true},
-    foto: { type: String, required: true}   
+    fotoPath: { type: String, required: true}   
 });
 
 module.exports = mongoose.model('platos', platoSchema);
