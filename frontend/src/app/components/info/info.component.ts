@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoService } from '../services/info.service';
-import { Info } from '../models/info';
+import { InfoService } from '../../services/info.service';
+import { Info } from '../../models/info';
 
 @Component({
   selector: 'app-info',
