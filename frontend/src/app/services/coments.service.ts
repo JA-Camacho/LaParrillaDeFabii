@@ -21,11 +21,11 @@ export class ComentsService {
     return this.http.post(this.URL_API, Coment);
   }
 
-  putComent(Coment: Coments) {
-    return this.http.put(this.URL_API + '/$(plato._id)', Coment);
+  putComent(id:string, Coment: Coments) {
+    return this.http.put(this.URL_API + '/' + id, Coment);
   }
 
   deleteComent(_id: string) {
-    return this.http.delete(this.URL_API + '/${_id}');
+    return this.http.delete(this.URL_API + '/' + _id);
   }
 }
