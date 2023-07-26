@@ -9,7 +9,6 @@ import { ComentsService } from 'src/app/services/coments.service';
 })
 export class ComentariosComponent {
   comentarios: Coments[] = [];
-
   constructor(private comentarioService: ComentsService) { }
 
   ngOnInit() {
@@ -22,4 +21,5 @@ export class ComentariosComponent {
       }
     );
   }
+  
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +15,9 @@ import { MenuDiaComponent } from './components/menu-dia/menu-dia.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CrearPlatoComponent } from './components/crear-plato/crear-plato.component';
-
+import { register } from 'swiper/element/bundle';
+import { ResComComponent } from './components/res-com/res-com.component';
+register();
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { CrearPlatoComponent } from './components/crear-plato/crear-plato.compon
     MenuDiaComponent,
     ComentariosComponent,
     AdminComponent,
-    CrearPlatoComponent
+    CrearPlatoComponent,
+    ResComComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { CrearPlatoComponent } from './components/crear-plato/crear-plato.compon
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

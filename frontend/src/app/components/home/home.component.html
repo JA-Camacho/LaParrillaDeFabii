@@ -1,2 +1,19 @@
 <h2>Los Mejores Platos</h2>
 <app-carousel></app-carousel>
+<app-comentarios></app-comentarios>
+<div class="m-5 p-5 p-3 mb-2">
+    <h2>Dejanos tu comentario</h2>
+    <form #comentario="ngForm" (submit)="subirComentario()">
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" name="correo" placeholder="(opcional)" [(ngModel)]="correo">
+        </div>
+        <div class="mb-3">
+            <label for="Comentario" class="form-label">Comentario</label>
+            <textarea class="form-control" name="coment" rows="3" [(ngModel)]="coment"></textarea >
+        </div>
+        <div>
+            <button class="btn btn-primary py-2" type="submit">Ingresar</button>
+        </div>
+    </form>
+</div>

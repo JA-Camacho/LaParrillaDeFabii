@@ -1,1 +1,18 @@
-<img src="../../assets/imgs/paginaEnConstruccion.jpg" alt="Bajo Construccion" class="img-fluid ounded mx-auto d-block">
+<h2>Sus Comentarios😊</h2>
+<div class="m-5">
+    <swiper-container space-between="10" navigation="true" slides-per-view="3" speed="500" loop="true"
+        centered-slides="true" autoplay="true" autoplay-delay="2000" autoplay-disable-on-interaction="false">
+        <swiper-slide *ngFor="let coment of comentarios">
+            <div class="card" style="width: 18rem;">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p class="card-text">{{ coment.comentario }}</p>
+                    </div>
+                    <div class="card-body" style="background-color: lightgray;">
+                        <p class="card-text">{{ coment.respuesta }}</p>
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+    </swiper-container>
+</div>
