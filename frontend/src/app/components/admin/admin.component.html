@@ -1,1 +1,23 @@
-<p>admin works!</p>
+<!-- plato-list.component.html -->
+<table class="table">
+  <thead class="table-light">
+    <tr>
+      <th>Número de fila</th>
+      <th>Nombre del plato</th>
+      <th>Tipo de plato</th>
+      <th>Descripción del plato</th>
+      <th>Acciones</th> <!-- Nueva columna para el botón de eliminar -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plato of platos; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ plato.nombre }}</td>
+      <td>{{ plato.tipo }}</td>
+      <td>{{ plato.descripcion }}</td>
+      <td>
+        <button (click)="eliminarPlato(plato._id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
