@@ -7,6 +7,9 @@ import { SesionComponent } from './components/sesion/sesion.component';
 import { MenuDiaComponent } from './components/menu-dia/menu-dia.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { authGuard } from './auth.guard';
+import { CrearPlatoComponent } from './components/crear-plato/crear-plato.component';
+import { ResComComponent } from './components/res-com/res-com.component';
+import { CrearMenuComponent } from './components/crear-menu/crear-menu.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -14,7 +17,11 @@ const routes: Routes = [
   {path: 'info', component:InfoComponent},
   {path: 'sesion', component:SesionComponent},
   {path: 'menuDia', component:MenuDiaComponent},
-  {path: 'admin', component:AdminComponent, canActivate: [authGuard]}
+  {path: 'admin', component:AdminComponent, canActivate: [authGuard]},
+  {path: 'crearPlato', component:CrearPlatoComponent, canActivate: [authGuard]},
+  {path: 'crearMenu', component:CrearMenuComponent, canActivate: [authGuard]},
+  {path: 'resCom', component:ResComComponent, canActivate: [authGuard]},
+  {path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
