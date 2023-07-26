@@ -1,4 +1,6 @@
 const Plato = require('../models/plato');
+const path = require('path');
+const fs = require('fs-extra');
 const platoCtrl = {};
 
 platoCtrl.getPlatos = async (req, res) => {
@@ -39,7 +41,10 @@ platoCtrl.editPlato = async (req, res) => {
 }
 
 platoCtrl.deletePlato = async (req, res) => {
-    await Plato.findByIdAndRemove(req.params.id);
+    const plato = await Plato.findByIdAndRemove(req.params.id);
+    if (plato){
+        fs.unlink(path.resolve(plato.fotoPath));
+    }
     res.json('Estado: plato eliminado');
 };
 
