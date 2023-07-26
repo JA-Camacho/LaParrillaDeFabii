@@ -16,7 +16,8 @@ platoCtrl.createPlato = async (req, res) => {
             dia: req.body.dia,
             descripcion: req.body.descripcion,
             tipo: req.body.tipo,
-            fotoPath: req.file.path
+            //fotoPath: req.file.path In Review
+            foto: req.body.foto
         });
         await plato.save();
         res.json('Estado: plato guardado');
@@ -42,9 +43,9 @@ platoCtrl.editPlato = async (req, res) => {
 
 platoCtrl.deletePlato = async (req, res) => {
     const plato = await Plato.findByIdAndRemove(req.params.id);
-    if (plato){
+    /*if (plato){
         fs.unlink(path.resolve(plato.fotoPath));
-    }
+    } In Review */
     res.json('Estado: plato eliminado');
 };
 

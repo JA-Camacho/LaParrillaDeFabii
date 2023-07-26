@@ -17,6 +17,7 @@ app.use('/api/admin', require('./routes/admins.routes'));
 app.use('/api/info', require('./routes/info.routes'));
 app.use('/api/menu', require('./routes/menuDia.routes'));
 app.use('/api/plato', require('./routes/plato.routes'));
+app.use('/api/coment', require('./routes/coments.routes'));
 app.use('/uploads', express.static(path.resolve('uploads')));
 
 //Starting the server
