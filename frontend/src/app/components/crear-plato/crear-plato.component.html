@@ -1,1 +1,58 @@
-<p>crear-plato works!</p>
+<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-0 teusernamePlatxt-center m-5">
+    <div class="form-signi m-auto">
+        <h4 class="mb-3">Crear Plato</h4>
+        <form #plato="ngForm" (submit)="registrarPlato()">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="username" class="form-label">Nombre del Plato</label>
+                    <div class="input-group has-validation">
+                        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" id="plato" placeholder="Nombre Plato" required>
+                        <div class="invalid-feedback">
+                            El nombre del plato es requerido
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="Precio" class="form-label">Precio</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="addon-wrapping">$</span>
+                        <input [(ngModel)]="precio" name="precio" type="number" class="form-control" id="Precio" placeholder="0.00" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="address" class="form-label">Descripcion</label>
+                    <textarea [(ngModel)]="descripcion" name="descripcion" class="form-control" aria-label="With textarea" required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter your shipping address.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="address2" class="form-label">Tipo</label>
+                    <select name="tipo" class="form-control form-style form-select" [(ngModel)]="tipo">
+                        <option value="" selected>Escoga el Tipo de Plato</option>
+                        <option value="sp">Sopa</option>
+                        <option value="pf">Plato Fuerte</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <label for="fileInput" class="img-container">
+                          <img [src]="image || '../../../assets/imgs/NoFoto.jpg'" class="img-fluid">
+                        </label>
+                        <input id="fileInput" type="file" class="d-none" (change)="onFileSelected($event)" accept="image/*">
+                      </div>
+                </div>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>
+
+  
