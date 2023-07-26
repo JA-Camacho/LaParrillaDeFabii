@@ -18,15 +18,23 @@ export class PlatoService {
     return this.http.get(this.URL_API);
   }
 
-  postPlatos(Platos: Plato) {
-    return this.http.post(this.URL_API, Platos);
+  postPlato(plato: Plato, foto: File) {
+    const fd = new FormData();
+    fd.append('nombre', plato.nombre);
+    fd.append('precio', plato.precio.toString());
+    fd.append('descripcion', plato.descripcion);
+    fd.append('tipo', plato.tipo);
+    fd.append('foto', foto);
+    console.log(foto);
+    return this.http.post(this.URL_API, fd);
   }
 
-  putPlatos(Platos: Plato) {
-    return this.http.put(this.URL_API + '/$(plato._id)', Platos);
+  putPlato(plato: Plato) {
+    return this.http.put(this.URL_API + '/$(plato._id)', plato);
   }
 
-  deletePlatos(_id: string) {
-    return this.http.delete(this.URL_API + '/${_id}');
+  deletePlato(_id: string) {
+    console.log(_id);
+    return this.http.delete(this.URL_API + '/' + _id);
   }
 }
