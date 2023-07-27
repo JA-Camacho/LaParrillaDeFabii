@@ -17,6 +17,7 @@ export class ResComComponent implements OnInit {
   obtenerComentarios() {
     this.comentarioService.getComents().subscribe((res) => {
       this.comentarios = res as Coments[];
+      this.comentarios = this.comentarios.reverse();
     })
   }
 
