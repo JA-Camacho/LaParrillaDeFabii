@@ -9,7 +9,7 @@ export class MenuDiaService {
 
   selectedmenuDia: MenuDia;
   readonly URL_API = 'http://192.168.100.14:3000/api/menu';
-  info: MenuDia[] = [];
+  menu: MenuDia[] = [];
   constructor(private http: HttpClient) {
     this.selectedmenuDia = new MenuDia();
    }
