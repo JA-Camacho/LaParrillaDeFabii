@@ -1,1 +1,31 @@
-<img src="../../assets/imgs/paginaEnConstruccion.jpg" alt="Bajo Construccion" class="img-fluid ounded mx-auto d-block">
+<h1>Menú del Día</h1>
+<div class="menu-container" *ngIf="platos.length > 0">
+    <div class="menu-section">
+        <h2>Sopas</h2>
+        <ul>
+            <ng-container *ngFor="let plato of platos">
+                <li class="menu-item" *ngIf="plato.tipo === 'sp'">
+                    <img src="{{plato.foto}}" alt="Sopa de verduras">
+                    {{plato.nombre}}
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+
+    <div class="menu-section">
+        <h2>Platos Fuertes</h2>
+        <ul>
+            <ng-container *ngFor="let plato of platos">
+                <li class="menu-item" *ngIf="plato.tipo === 'pf'">
+                    <img src="{{plato.foto}}" alt="Sopa de verduras">
+                    {{plato.nombre}}
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>
+
+<div class="no-menu-card">
+    <h2>Lo sentimos, no hay menú el día de hoy</h2>
+    <p>Vuelva a consultar más tarde.</p>
+</div>
