@@ -1,9 +1,9 @@
 export class MenuDia {
-    constructor(dia='',platos=[]){
+    constructor(dia='', platos:string[]=[]){
         this.dia= dia;
         this.platos= platos;
         }
         dia: string;
-        platos: string[];
+        public platos: string[];
     }
     
