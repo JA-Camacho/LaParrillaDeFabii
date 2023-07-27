@@ -13,7 +13,7 @@ export class CrearPlatoComponent {
   nombre: string = '';
   precio: number = 0.0;
   descripcion: string = '';
-  tipo: string = 'Escoga el Tipo de Plato';
+  tipo: string = '';
   image: any;
 
   constructor(
