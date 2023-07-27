@@ -25,7 +25,7 @@
     </div>
 </div>
 
-<div class="no-menu-card">
+<div class="no-menu-card" *ngIf="platos.length === 0">
     <h2>Lo sentimos, no hay menú el día de hoy</h2>
     <p>Vuelva a consultar más tarde.</p>
 </div>
