@@ -16,6 +16,8 @@
                         [routerLinkActive]="['active']">Platos</a></li>
                 <li class="nav-item"><a class="nav-link" [routerLink]="['/info']"
                         [routerLinkActive]="['active']">Informacion</a></li>
+                <li *ngIf="isLoggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/admin']"
+                        [routerLinkActive]="['active']">Admin</a></li>
                 <li *ngIf="isLoggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/crearPlato']"
                         [routerLinkActive]="['active']">Crear Plato</a></li>
                 <li *ngIf="isLoggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/crearMenu']"
@@ -26,8 +28,8 @@
             <ul class="navbar-nav">
                 <li *ngIf="!isLoggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/sesion']"
                         [routerLinkActive]="['active']">Iniciar Sesion</a></li>
-                        <li *ngIf="isLoggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/sesion']"
-                            (click)="logout();">Cerrar Sesion</a></li>
+                <li *ngIf="isLoggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/sesion']"
+                        (click)="logout();">Cerrar Sesion</a></li>
             </ul>
         </div>
     </div>
