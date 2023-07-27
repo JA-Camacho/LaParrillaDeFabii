@@ -7,9 +7,6 @@
                     <label for="username" class="form-label">Nombre del Plato</label>
                     <div class="input-group has-validation">
                         <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" id="plato" placeholder="Nombre Plato" required>
-                        <div class="invalid-feedback">
-                            El nombre del plato es requerido
-                        </div>
                     </div>
                 </div>
 
@@ -19,17 +16,11 @@
                         <span class="input-group-text" id="addon-wrapping">$</span>
                         <input [(ngModel)]="precio" name="precio" type="number" class="form-control" id="Precio" placeholder="0.00" required>
                     </div>
-                    <div class="invalid-feedback">
-                        Please enter a valid email address for shipping updates.
-                    </div>
                 </div>
 
                 <div class="col-12">
                     <label for="address" class="form-label">Descripcion</label>
                     <textarea [(ngModel)]="descripcion" name="descripcion" class="form-control" aria-label="With textarea" required></textarea>
-                    <div class="invalid-feedback">
-                        Please enter your shipping address.
-                    </div>
                 </div>
 
                 <div class="col-12">
