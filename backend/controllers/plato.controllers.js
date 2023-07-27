@@ -1,6 +1,4 @@
 const Plato = require('../models/plato');
-const path = require('path');
-const fs = require('fs-extra');
 const platoCtrl = {};
 
 platoCtrl.getPlatos = async (req, res) => {
@@ -29,15 +27,8 @@ platoCtrl.createPlato = async (req, res) => {
 
 platoCtrl.editPlato = async (req, res) => {
     const { id } = req.params;
-    const plato = new Plato({
-        nombre: req.body.nombre,
-            precio: req.body.precio,
-            dia: req.body.dia,
-            descripcion: req.body.descripcion,
-            tipo: req.body.tipo,
-            fotoPath: req.file.path
-    });
-    await plato.findByIdAndUpdate(id, { $set: plato }, { new: true });
+    const { nombre,precio,descripcion,tipo,foto } = req.body;
+    await Plato.findByIdAndUpdate(id, { nombre,precio,descripcion,tipo,foto }, { new: true });
     res.json('Estado: plato actualizado');
 }
 

@@ -21,12 +21,8 @@ comentsCtrl.createComent = async (req, res) => {
 
 comentsCtrl.editComent = async (req, res) => {
     const { id } = req.params;
-    const coment = new coments({
-        correo: req.body.correo,
-        comentario: req.body.comentario,
-        respuesta: req.body.respuesta
-    });
-    await coment.findByIdAndUpdate(id, { $set: coment }, { new: true });
+    const { correo,comentario,respuesta } = req.body;
+    await coments.findByIdAndUpdate(id, { correo, comentario, respuesta }, { new: true });
     res.json('Estado: comentario actualizado');
 }
 

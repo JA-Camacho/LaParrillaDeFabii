@@ -28,11 +28,8 @@ adminsCtrl.createAdmin = async (req, res) => {
 
 adminsCtrl.editAdmin = async (req, res) => {
     const { id } = req.params;
-    const admin = new Admins({
-        usuario: req.body.usuario,
-        contra: req.body.contra,
-    });
-    await admin.findByIdAndUpdate(id, { $set: admin }, { new: true });
+    const { usuario, contra } = req.body;
+    await Admins.findByIdAndUpdate(id, { usuario,contra }, { new: true });
     res.json('Estado: admin actualizado');
 }
 
