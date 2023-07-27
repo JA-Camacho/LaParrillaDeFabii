@@ -1,1 +1,18 @@
-<img src="../../assets/imgs/paginaEnConstruccion.jpg" alt="Bajo Construccion" class="img-fluid ounded mx-auto d-block">
+<div class="container">
+    <h1>Información</h1>
+    <div class="info">
+        <ng-container *ngFor="let info of infoService.info">
+            <h2>{{info.nombre}}</h2>
+            <p>Horario: de {{ info.horaApertura }} a {{ info.horaCierre }}</p>
+                <p>Contactos:</p>
+            <ul *ngFor="let contacto of info.contacto">
+                <li style="list-style: none;">{{contacto}}</li>
+            </ul>
+            <p>Dirección: {{ info.direccion }}</p>
+            <img class="w-100" src="../../../assets/imgs/Ubicacion.jpg" alt="La Parrilla de Fabii">
+            <iframe class="w-100 mt-4"
+                src="https://www.google.com/maps/d/u/0/embed?mid=1LzbCJeHnenWjLPONwsP0XuN8mkAd4eM&ehbc=2E312F"
+                height="400"></iframe>
+        </ng-container>
+    </div>
+</div>
