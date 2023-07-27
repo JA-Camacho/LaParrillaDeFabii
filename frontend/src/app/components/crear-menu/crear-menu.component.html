@@ -1,1 +1,38 @@
-<p>crear-menu works!</p>
+<h1>Platos</h1>
+<div class="row g-3 m-3 justify-content-center">
+<div class="col-auto">
+<select name="tipo" class="form-control form-style form-select" [(ngModel)]="dia">
+    <option value="" selected>Dia del menu</option>
+    <option value="L">Lunes</option>
+    <option value="M">Martes</option>
+    <option value="Mi">Miercoles</option>
+    <option value="J">Jueves</option>
+    <option value="V">Viernes</option>
+    <option value="S">Sabado</option>
+</select>
+</div>
+<div class="col-auto">
+    <button (click)="guardarMenu()" class="btn btn-success">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save2" viewBox="0 0 16 16">
+        <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v4.5h2a.5.5 0 0 1 .354.854l-2.5 2.5a.5.5 0 0 1-.708 0l-2.5-2.5A.5.5 0 0 1 5.5 6.5h2V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+      </svg>
+      Guardar
+      </button>
+</div>
+</div>
+<table class="table">
+    <thead class="table-light">
+    <tr>
+      <th>Nombre del Plato</th>
+      <th>Tipo de Plato</th>
+      <th>Seleccionar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plato of platos">
+      <td>{{ plato.nombre }}</td>
+      <td>{{ traducirTipo(plato.tipo) }}</td>
+      <td><input class="form-check-input" type="checkbox" (change)="agregarPlatoSeleccionado(plato._id)"></td>
+    </tr>
+  </tbody>
+</table>

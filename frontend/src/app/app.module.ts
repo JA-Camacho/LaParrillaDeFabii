@@ -17,6 +17,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CrearPlatoComponent } from './components/crear-plato/crear-plato.component';
 import { register } from 'swiper/element/bundle';
 import { ResComComponent } from './components/res-com/res-com.component';
+import { CrearMenuComponent } from './components/crear-menu/crear-menu.component';
+
 register();
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ register();
     ComentariosComponent,
     AdminComponent,
     CrearPlatoComponent,
-    ResComComponent
+    ResComComponent,
+    CrearMenuComponent
   ],
   imports: [
     BrowserModule,
