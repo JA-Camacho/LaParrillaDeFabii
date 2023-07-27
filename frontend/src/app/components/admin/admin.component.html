@@ -13,7 +13,7 @@
     <tr *ngFor="let plato of platos; let i = index">
       <td>{{ i + 1 }}</td>
       <td>{{ plato.nombre }}</td>
-      <td>{{ plato.tipo }}</td>
+      <td>{{ traducirTipo(plato.tipo) }}</td>
       <td>{{ plato.descripcion }}</td>
       <td>
         <button (click)="eliminarPlato(plato._id)" class="btn btn-outline-danger">

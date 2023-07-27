@@ -21,6 +21,9 @@ export class AdminComponent implements OnInit {
       this.platos = res as Plato[];
     })
   }
+  traducirTipo(tipo: string): string {
+    return tipo === 'sp' ? 'Sopa' : 'Plato Fuerte';
+  }
   eliminarPlato(id: string) {
     const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este plato?');
     if (confirmacion) {
