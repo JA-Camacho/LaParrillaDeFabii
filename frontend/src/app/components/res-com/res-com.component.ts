@@ -7,9 +7,9 @@ import { ComentsService } from 'src/app/services/coments.service';
   templateUrl: './res-com.component.html',
   styleUrls: ['./res-com.component.css']
 })
-export class ResComComponent implements OnInit{
+export class ResComComponent implements OnInit {
   comentarios: Coments[] = [];
-  constructor(private comentarioService: ComentsService){}
+  constructor(private comentarioService: ComentsService) { }
   ngOnInit(): void {
     this.obtenerComentarios();
   }
@@ -22,11 +22,12 @@ export class ResComComponent implements OnInit{
 
   responderComentario(id: string, correo: string, comentario: string, respuesta: string) {
     const confirmacion = window.confirm('¿Estás seguro de que deseas guardar la respuesta?');
-    if (confirmacion) {  
+    if (confirmacion) {
       let com = new Coments(correo, comentario, respuesta);
-        this.comentarioService.putComent(id, com).subscribe(
+      this.comentarioService.putComent(id, com).subscribe(
         (res) => {
           console.log('Respuesta guardada exitosamente:', res);
+          return alert("La respuesta ha sido guardada exitosamente");
         },
         (error) => {
           console.error('Error al guardar la respuesta:', error);
@@ -35,7 +36,7 @@ export class ResComComponent implements OnInit{
     } else {
       console.log('Operación de guardar respuesta cancelada');
     }
-  }  
+  }
 
   eliminarComentario(id: string) {
     const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este comentario?');

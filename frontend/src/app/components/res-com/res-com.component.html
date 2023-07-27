@@ -15,7 +15,7 @@
             <td>{{ coment.correo }}</td>
             <td>{{ coment.comentario }}</td>
             <td> 
-                <textarea class="form-control" name="coment" rows="3" [(ngModel)]="coment.respuesta"></textarea>            </td>
+                <textarea class="form-control" name="coment" rows="2" [(ngModel)]="coment.respuesta"></textarea>            </td>
             <td>
                 <button (click)="responderComentario(coment._id, coment.correo, coment.comentario, coment.respuesta)"
                     class="btn btn-success">
