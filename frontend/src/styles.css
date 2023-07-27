@@ -16,7 +16,7 @@ img {
     pointer-events: none;
 }
 
-h2{
+h1, h2{
     font-family: 'Bakhari Script', sans-serif;
     text-align: center;
 }
